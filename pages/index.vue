@@ -8,23 +8,27 @@ import ReservationBox from "../components/ReservationBox";
 
 export default {
   components: {
-    ReservationBox
+    ReservationBox,
   },
   head() {
     return {
-      title: "Reservation"
+      title: "Reservation",
     };
   },
   data() {
     return {
-      reservations: []
+      reservations: [],
     };
   },
   methods: {
-    searchText(text) {
-      console.log(`searched for ${text}`);
-    }
-  }
+    searchText(reservation) {
+      console.log(`searched for ${reservation.city}`);
+      this.$router.push({
+        name: "confirmationCode",
+        params: { reservation },
+      });
+    },
+  },
 };
 </script>
 

@@ -41,15 +41,20 @@ export default {
       text: "",
       suggestions: [],
       selected: 0,
+      selectedItem: null,
     };
   },
   methods: {
     onSubmit() {
-      this.$emit("search-text", this.text);
-      this.text = "";
+      console.log("wtf", this.selectedItem);
+      if (this.selectedItem) {
+        this.$emit("search-text", this.selectedItem);
+        this.text = "";
+      }
     },
     itemClicked(index) {
       this.selected = index;
+      this.selectedItem = this.suggestions[index];
       this.text = this.suggestions[index].city;
       this.suggestions = [];
     },
@@ -72,6 +77,7 @@ export default {
               this.suggestions = res.data.filter(
                 (suggestion) =>
                   suggestion.city.toLowerCase().includes(text) ||
+                  suggestion.state.toLowerCase().includes(text) ||
                   suggestion.confirmationCode.toLowerCase().includes(text)
               );
             });
