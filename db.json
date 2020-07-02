@@ -1,6 +1,7 @@
 {
   "reservations": [
     {
+      "id": 1,
       "confirmationCode": "AAAAAA",
       "checkInDate": "2020-02-10",
       "checkOutDate": "2020-02-14",
@@ -9,6 +10,7 @@
       "cityImage": "<https://cdn.pixabay.com/photo/2013/11/13/21/14/san-francisco-210230_960_720.jpg>"
     },
     {
+      "id": 2,
       "confirmationCode": "BBBBBB",
       "checkInDate": "2020-03-10",
       "checkOutDate": "2020-03-14",
@@ -17,12 +19,49 @@
       "cityImage": "<https://cdn.pixabay.com/photo/2016/10/25/12/28/los-angeles-1768743_960_720.jpg>"
     },
     {
+      "id": 3,
       "confirmationCode": "CCCCCC",
       "checkInDate": "2020-04-10",
       "checkOutDate": "2020-04-14",
       "city": "New York City, NY",
       "rating": 5,
       "cityImage": "<https://cdn.pixabay.com/photo/2016/01/19/18/00/city-1150026_960_720.jpg>"
+    },
+    {
+      "id": 4,
+      "confirmationCode": "DDDDDD",
+      "checkInDate": "2020-02-13",
+      "checkOutDate": "2020-02-16",
+      "city": "Chicago, IL",
+      "rating": 3,
+      "cityImage": "<https://cdn.pixabay.com/photo/2020/06/28/00/04/chicago-5347435_960_720.jpg>"
+    },
+    {
+      "id": 5,
+      "confirmationCode": "EEEEEE",
+      "checkInDate": "2020-03-10",
+      "checkOutDate": "2020-03-12",
+      "city": "Seattle, WA",
+      "rating": 4,
+      "cityImage": "<https://cdn.pixabay.com/photo/2020/01/25/12/28/space-needle-4792436_960_720.jpg>"
+    },
+    {
+      "id": 6,
+      "confirmationCode": "FFFFFF",
+      "checkInDate": "2020-02-14",
+      "checkOutDate": "2020-02-17",
+      "city": "Miami, FL",
+      "rating": 2,
+      "cityImage": "<https://cdn.pixabay.com/photo/2019/08/22/20/38/miami-4424373_960_720.jpg>"
+    },
+    {
+      "id": 7,
+      "confirmationCode": "GGGGGG",
+      "checkInDate": "2020-04-03",
+      "checkOutDate": "2020-04-05",
+      "city": "Boston, MA",
+      "rating": 3,
+      "cityImage": "<https://cdn.pixabay.com/photo/2019/09/23/14/30/boston-4498736_960_720.jpg>"
     }
   ]
 }

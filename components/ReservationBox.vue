@@ -12,11 +12,19 @@
         v-on:input="searchSuggestion"
         placeholder="Enter city or code"
       />
-      <div
-        class="suggestion-box"
-        v-bind:class="{ hide: suggestions.length === 0 }"
-      >
-        wolololo
+      <div class="suggestion-box" :class="{ hide: suggestions.length === 0 }">
+        <div class="options">
+          <ul>
+            <li
+              v-for="(suggestion, index) in suggestions"
+              :key="suggestion.confirmationCode"
+              :class="{ selected: selected === index }"
+              @click="itemClicked(index)"
+            >
+              {{ suggestion.city }}
+            </li>
+          </ul>
+        </div>
       </div>
       <input type="submit" value="Search" />
     </form>
@@ -31,7 +39,8 @@ export default {
   data() {
     return {
       text: "",
-      suggestions: []
+      suggestions: [],
+      selected: 0,
     };
   },
   methods: {
@@ -39,16 +48,48 @@ export default {
       this.$emit("search-text", this.text);
       this.text = "";
     },
+    itemClicked(index) {
+      this.selected = index;
+      this.text = this.suggestions[index].city;
+      this.suggestions = [];
+    },
 
-    searchSuggestion() {
-      console.log(this.text);
-    }
-  }
+    async searchSuggestion() {
+      const config = {
+        headers: {
+          Accept: "application/json",
+        },
+      };
+      try {
+        const text = this.text.toLowerCase();
+        if (text !== "") {
+          const res = await axios
+            .get(
+              "https://my-json-server.typicode.com/sarmedc/reservations/reservations",
+              config
+            )
+            .then((res) => {
+              this.suggestions = res.data.filter(
+                (suggestion) =>
+                  suggestion.city.toLowerCase().includes(text) ||
+                  suggestion.confirmationCode.toLowerCase().includes(text)
+              );
+            });
+        } else this.suggestions = [];
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  },
 };
 </script>
 
 <style>
 .hide {
   display: none;
+}
+.selected {
+  background: #eee;
+  font-weight: 600;
 }
 </style>
