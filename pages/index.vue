@@ -19,9 +19,13 @@ export default {
     return {
       reservations: []
     };
+  },
+  methods: {
+    searchText(text) {
+      console.log(`searched for ${text}`);
+    }
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>
