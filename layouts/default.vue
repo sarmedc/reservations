@@ -10,12 +10,13 @@
 import AppHeader from "../components/AppHeader";
 
 export default {
-  components: { AppHeader }
+  components: { AppHeader },
 };
 </script>
 
 <style>
 .container {
   margin: 0 84px 0 84px;
+  font-family: Roboto;
 }
 </style>

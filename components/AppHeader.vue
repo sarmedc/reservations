@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h2>Kasa</h2>
+    <h2><nuxt-link to="/">La Casa</nuxt-link></h2>
     <ul>
       <li>Your reservations</li>
       <li>FAQ</li>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "AppHeader"
+  name: "AppHeader",
 };
 </script>
 
@@ -24,14 +24,14 @@ export default {
   align-items: center;
 }
 
-ul {
+.header ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
 }
 
-li {
+.header li {
   padding: 0 5px;
 }
 </style>
