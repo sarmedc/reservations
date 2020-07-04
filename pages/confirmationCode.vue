@@ -28,31 +28,23 @@ export default {
       title: "Confirmation Code",
     };
   },
-  data() {
-    return {
-      reservation: this.$route.params.reservation,
-      code: this.$route.query.code,
-    };
-  },
-  async created() {
+  async asyncData({ app, route }) {
     const config = {
       headers: {
         Accept: "application/json",
       },
     };
+    const id = route.query.id;
 
     try {
-      if (!this.reservation && this.code) {
-        await axios
-          .get(
-            "https://my-json-server.typicode.com/sarmedc/reservations/reservations",
-            config
-          )
-          .then((res) => {
-            this.reservation = res.data.filter(
-              (suggestion) => suggestion.confirmationCode === this.code
-            )[0];
-          });
+      if (id) {
+        const reservation = await app.$axios.$get(
+          "https://my-json-server.typicode.com/sarmedc/reservations/reservations/" +
+            id,
+          config
+        );
+
+        return { reservation };
       }
     } catch (err) {
       console.error(err);

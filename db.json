@@ -1,12 +1,62 @@
 {
+  "reservationsSearch": [
+    {
+      "id": 1,
+      "confirmationCode": "AAAAAA",
+      "checkInDate": "2020-02-10",
+      "checkOutDate": "2020-02-14",
+      "city": "San Francisco, CA"
+    },
+    {
+      "id": 2,
+      "confirmationCode": "BBBBBB",
+      "checkInDate": "2020-03-10",
+      "checkOutDate": "2020-03-14",
+      "city": "Los Angeles, CA"
+    },
+    {
+      "id": 3,
+      "confirmationCode": "CCCCCC",
+      "checkInDate": "2020-04-10",
+      "checkOutDate": "2020-04-14",
+      "city": "New York City, NY"
+    },
+    {
+      "id": 4,
+      "confirmationCode": "DDDDDD",
+      "checkInDate": "2020-02-13",
+      "checkOutDate": "2020-02-16",
+      "city": "Chicago, IL"
+    },
+    {
+      "id": 5,
+      "confirmationCode": "EEEEEE",
+      "checkInDate": "2020-03-10",
+      "checkOutDate": "2020-03-12",
+      "city": "Seattle, WA"
+    },
+    {
+      "id": 6,
+      "confirmationCode": "FFFFFF",
+      "checkInDate": "2020-02-14",
+      "checkOutDate": "2020-02-17",
+      "city": "Miami, FL"
+    },
+    {
+      "id": 7,
+      "confirmationCode": "GGGGGG",
+      "checkInDate": "2020-04-03",
+      "checkOutDate": "2020-04-05",
+      "city": "Boston, MA"
+    }
+  ],
   "reservations": [
     {
       "id": 1,
       "confirmationCode": "AAAAAA",
       "checkInDate": "2020-02-10",
       "checkOutDate": "2020-02-14",
-      "city": "San Francisco",
-      "state": "CA",
+      "city": "San Francisco, CA",
       "location": "Kasa San Francisco at Village Apartments 101",
       "rating": null,
       "cityImage": "https://cdn.pixabay.com/photo/2013/11/13/21/14/san-francisco-210230_960_720.jpg"
@@ -16,8 +66,7 @@
       "confirmationCode": "BBBBBB",
       "checkInDate": "2020-03-10",
       "checkOutDate": "2020-03-14",
-      "city": "Los Angeles",
-      "state": "CA",
+      "city": "Los Angeles, CA",
       "location": "Kasa Los Angeles at Park Apartments 103",
       "rating": 3,
       "cityImage": "https://cdn.pixabay.com/photo/2016/10/25/12/28/los-angeles-1768743_960_720.jpg"
@@ -27,8 +76,7 @@
       "confirmationCode": "CCCCCC",
       "checkInDate": "2020-04-10",
       "checkOutDate": "2020-04-14",
-      "city": "New York City",
-      "state": "NY",
+      "city": "New York City, NY",
       "location": "Kasa New York at Ridge Apartments 202",
       "rating": 5,
       "cityImage": "https://cdn.pixabay.com/photo/2016/01/19/18/00/city-1150026_960_720.jpg"
@@ -38,8 +86,7 @@
       "confirmationCode": "DDDDDD",
       "checkInDate": "2020-02-13",
       "checkOutDate": "2020-02-16",
-      "city": "Chicago",
-      "state": "IL",
+      "city": "Chicago, IL",
       "location": "Kasa Chicago at Lake Apartments 104",
       "rating": 3,
       "cityImage": "https://cdn.pixabay.com/photo/2020/06/28/00/04/chicago-5347435_960_720.jpg"
@@ -49,8 +96,7 @@
       "confirmationCode": "EEEEEE",
       "checkInDate": "2020-03-10",
       "checkOutDate": "2020-03-12",
-      "city": "Seattle",
-      "state": "WA",
+      "city": "Seattle, WA",
       "location": "Kasa Seattle at Pointe Apartments 403",
       "rating": 4,
       "cityImage": "https://cdn.pixabay.com/photo/2020/01/25/12/28/space-needle-4792436_960_720.jpg"
@@ -60,8 +106,7 @@
       "confirmationCode": "FFFFFF",
       "checkInDate": "2020-02-14",
       "checkOutDate": "2020-02-17",
-      "city": "Miami",
-      "state": "FL",
+      "city": "Miami, FL",
       "location": "Kasa Miami at Creek Apartments 303",
       "rating": 2,
       "cityImage": "https://cdn.pixabay.com/photo/2019/08/22/20/38/miami-4424373_960_720.jpg"
@@ -71,8 +116,7 @@
       "confirmationCode": "GGGGGG",
       "checkInDate": "2020-04-03",
       "checkOutDate": "2020-04-05",
-      "city": "Boston",
-      "state": "MA",
+      "city": "Boston, MA",
       "location": "Kasa Boston at Crossing Apartments 803",
       "rating": 3,
       "cityImage": "https://cdn.pixabay.com/photo/2019/09/23/14/30/boston-4498736_960_720.jpg"

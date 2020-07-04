@@ -4,7 +4,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import ReservationBox from "../components/ReservationBox";
 
 export default {
@@ -18,7 +17,7 @@ export default {
     };
   },
 
-  async created() {
+  async asyncData({ app }) {
     const config = {
       headers: {
         Accept: "application/json",
@@ -26,32 +25,22 @@ export default {
     };
 
     try {
-      await axios
-        .get(
-          "https://my-json-server.typicode.com/sarmedc/reservations/reservations",
-          config
-        )
-        .then((res) => {
-          this.reservations = res.data;
-        });
+      const reservations = await app.$axios.$get(
+        "https://my-json-server.typicode.com/sarmedc/reservations/reservationsSearch",
+        config
+      );
+
+      return { reservations };
     } catch (err) {
       console.error(err);
     }
   },
 
-  data() {
-    return {
-      reservations: [],
-    };
-  },
-
   methods: {
     searchText(reservation) {
-      console.log(`searched for ${reservation.city}`);
       this.$router.push({
         name: "confirmationCode",
-        query: { code: reservation.confirmationCode },
-        params: { reservation },
+        query: { id: reservation.id },
       });
     },
   },

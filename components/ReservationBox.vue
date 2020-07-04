@@ -27,7 +27,7 @@
             :class="{ selected: selected === index }"
             @click="itemClicked(index)"
           >
-            <div>{{ suggestion.city }}, {{ suggestion.state }}</div>
+            <div>{{ suggestion.city }}</div>
             <div>
               {{ suggestion.checkInDate }} - {{ suggestion.checkOutDate }}, #{{
                 suggestion.confirmationCode
@@ -57,7 +57,6 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log("wtf", this.selectedItem);
       if (this.selectedItem) {
         this.$emit("search-text", this.selectedItem);
         this.text = "";
@@ -85,9 +84,9 @@ export default {
     scrollToItem() {
       this.$refs.suggestionBox.scrollTop = this.selected * 58;
     },
-    async searchSuggestion() {
+    searchSuggestion() {
       const text = this.text.toLowerCase();
-      if (text !== "") {
+      if (text !== "" && this.reservations) {
         this.suggestions = this.reservations.filter(
           (reservation) =>
             reservation.city.toLowerCase().includes(text) ||

@@ -21,10 +21,10 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
-      }
+        content: process.env.npm_package_description || "",
+      },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
   /*
    ** Global CSS
@@ -50,7 +50,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
-    "@nuxtjs/pwa"
+    "@nuxtjs/pwa",
   ],
   /*
    ** Axios module configuration
@@ -61,5 +61,24 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {}
+  build: {},
+  pwa: {
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern:
+            "https://my-json-server.typicode.com/sarmedc/reservations/reservations/*",
+          handler: "cacheFirst",
+          method: "GET",
+          strategyOptions: {
+            networkTimeoutSeconds: 20,
+            cacheName: "api-cache",
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
+          },
+        },
+      ],
+    },
+  },
 };
