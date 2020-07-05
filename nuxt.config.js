@@ -1,18 +1,6 @@
 export default {
-  /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
   mode: "spa",
-  /*
-   ** Nuxt target
-   ** See https://nuxtjs.org/api/configuration-target
-   */
   target: "server",
-  /*
-   ** Headers of the page
-   ** See https://nuxtjs.org/api/configuration-head
-   */
   head: {
     title: process.env.npm_package_name || "",
     meta: [
@@ -26,58 +14,16 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-  /*
-   ** Global CSS
-   */
   css: [],
-  /*
-   ** Plugins to load before mounting the App
-   ** https://nuxtjs.org/guide/plugins
-   */
   plugins: [],
-  /*
-   ** Auto import components
-   ** See https://nuxtjs.org/api/configuration-components
-   */
   components: true,
-  /*
-   ** Nuxt.js dev-modules
-   */
   buildModules: [],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios",
-    "@nuxtjs/pwa",
-  ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
   axios: {},
-  /*
-   ** Build configuration
-   ** See https://nuxtjs.org/api/configuration-build/
-   */
   build: {},
   pwa: {
     workbox: {
       runtimeCaching: [
-        {
-          urlPattern:
-            "https://my-json-server.typicode.com/sarmedc/reservations/reservations",
-          handler: "cacheFirst",
-          method: "GET",
-          strategyOptions: {
-            networkTimeoutSeconds: 20,
-            cacheName: "api-cache",
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
         {
           urlPattern:
             "https://my-json-server.typicode.com/sarmedc/reservations/reservations/*",
