@@ -17,7 +17,6 @@ export default {
 
 <style>
 .container {
-  margin: 0 84px 0 84px;
   font-family: Roboto;
   min-width: 1100px;
 }

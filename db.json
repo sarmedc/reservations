@@ -1,55 +1,4 @@
 {
-  "reservationsSearch": [
-    {
-      "id": 1,
-      "confirmationCode": "AAAAAA",
-      "checkInDate": "2020-02-10",
-      "checkOutDate": "2020-02-14",
-      "city": "San Francisco, CA"
-    },
-    {
-      "id": 2,
-      "confirmationCode": "BBBBBB",
-      "checkInDate": "2020-03-10",
-      "checkOutDate": "2020-03-14",
-      "city": "Los Angeles, CA"
-    },
-    {
-      "id": 3,
-      "confirmationCode": "CCCCCC",
-      "checkInDate": "2020-04-10",
-      "checkOutDate": "2020-04-14",
-      "city": "New York City, NY"
-    },
-    {
-      "id": 4,
-      "confirmationCode": "DDDDDD",
-      "checkInDate": "2020-02-13",
-      "checkOutDate": "2020-02-16",
-      "city": "Chicago, IL"
-    },
-    {
-      "id": 5,
-      "confirmationCode": "EEEEEE",
-      "checkInDate": "2020-03-10",
-      "checkOutDate": "2020-03-12",
-      "city": "Seattle, WA"
-    },
-    {
-      "id": 6,
-      "confirmationCode": "FFFFFF",
-      "checkInDate": "2020-02-14",
-      "checkOutDate": "2020-02-17",
-      "city": "Miami, FL"
-    },
-    {
-      "id": 7,
-      "confirmationCode": "GGGGGG",
-      "checkInDate": "2020-04-03",
-      "checkOutDate": "2020-04-05",
-      "city": "Boston, MA"
-    }
-  ],
   "reservations": [
     {
       "id": 1,
@@ -99,7 +48,7 @@
       "city": "Seattle, WA",
       "location": "Kasa Seattle at Pointe Apartments 403",
       "rating": 4,
-      "cityImage": "https://cdn.pixabay.com/photo/2020/01/25/12/28/space-needle-4792436_960_720.jpg"
+      "cityImage": "https://cdn.pixabay.com/photo/2015/08/01/13/47/seattle-870282_960_720.jpg"
     },
     {
       "id": 6,

@@ -1,11 +1,9 @@
 <template>
   <div class="home">
-    <div class="box">
-      <ReservationBox
-        v-on:search-text="searchText"
-        :reservations="reservations"
-      />
-    </div>
+    <ReservationBox
+      v-on:search-text="searchText"
+      :reservations="reservations"
+    />
     <img :src="require('../assets/room.jpg')" />
   </div>
 </template>
@@ -45,17 +43,15 @@ export default {
 
 <style>
 .home {
-  display: flex;
-  flex-direction: row;
+  text-align: right;
   position: relative;
-}
-.home .box {
-  top: 80px;
+  margin: 15px 86px;
 }
 .home img {
-  right: 0;
-  width: 912px;
-  height: 560px;
+  width: 80%;
+  max-width: 1300px;
+  min-width: 800px;
+  height: auto;
   z-index: -1;
 }
 </style>

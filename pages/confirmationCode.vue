@@ -1,5 +1,5 @@
 <template>
-  <div v-if="reservation">
+  <div v-if="reservation" class="confirmation-page">
     <h1 class="reservation-name">Your reservation in {{ reservation.city }}</h1>
     <div class="content">
       <img :src="reservation.cityImage" />
@@ -46,6 +46,10 @@ export default {
 </script>
 
 <style>
+.confirmation-page {
+  margin: 0 86px;
+  height: 60vh;
+}
 .content {
   display: flex;
   flex-direction: row;
@@ -56,6 +60,7 @@ export default {
   font-weight: bold;
   font-size: 32px;
   line-height: 32px;
+  margin: 40px 0;
 }
 .reservation-info {
   margin-left: 25px;
@@ -71,7 +76,7 @@ export default {
   font-weight: normal;
 }
 img {
-  width: 440px;
+  width: 448px;
   height: 275px;
   border-radius: 4px;
 }

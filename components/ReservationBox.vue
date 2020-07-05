@@ -104,6 +104,8 @@ export default {
   font-weight: 600;
 }
 .input-box {
+  position: absolute;
+  top: 15%;
   width: 448px;
   height: 300px;
   background: #fafafa;
@@ -112,7 +114,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
 }
 .input-box h3 {
   margin-top: 0;

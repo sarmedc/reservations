@@ -1,6 +1,6 @@
 <template>
-  <div class="footer">
-    <div class="head"><span>La Casa</span> | Your home on the road</div>
+  <footer>
+    <div class="head"><span>Kasa</span> | Your home on the road</div>
     <div class="content">
       <div class="footer-col">
         <div class="footer-label">Cities</div>
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="footer-footer">2020 - Kasa Living Inc.</div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -50,34 +50,31 @@ export default {};
 </script>
 
 <style>
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+footer {
   padding: 0 100px;
+  padding-bottom: 20px;
   background: #f2f2f2;
   overflow: auto;
 }
-.footer .head {
+footer .head {
   padding: 50px 0;
 }
-.footer .content {
+footer .content {
   display: flex;
 }
-.footer .footer-col {
+footer .footer-col {
   max-height: 300px;
   margin-right: 100px;
 }
-.footer ul {
+footer ul {
   list-style: none;
   padding: 0;
 }
-.footer li {
+footer li {
   padding-bottom: 10px;
   display: inline-block;
 }
-.footer-footer {
+footer-footer {
   margin-bottom: 50px;
 }
 </style>

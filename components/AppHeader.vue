@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h2><nuxt-link to="/">La Casa</nuxt-link></h2>
+    <h2><nuxt-link to="/" class="link">Kasa</nuxt-link></h2>
     <ul>
       <li>Your reservations</li>
       <li>FAQ</li>
@@ -22,6 +22,12 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 0 86px;
+}
+
+.header .link {
+  color: #2f2a8d;
+  text-decoration: none;
 }
 
 .header ul {
