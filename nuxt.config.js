@@ -26,6 +26,19 @@ export default {
       runtimeCaching: [
         {
           urlPattern:
+            "https://my-json-server.typicode.com/sarmedc/reservations/reservations",
+          handler: "cacheFirst",
+          method: "GET",
+          strategyOptions: {
+            networkTimeoutSeconds: 20,
+            cacheName: "api-cache",
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
+          },
+        },
+        {
+          urlPattern:
             "https://my-json-server.typicode.com/sarmedc/reservations/reservations/*",
           handler: "cacheFirst",
           method: "GET",

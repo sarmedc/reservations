@@ -1,11 +1,8 @@
 <template>
-  <div class="home">
-    <ReservationBox
-      v-on:search-text="searchText"
-      :reservations="reservations"
-    />
-    <img :src="require('../assets/room.jpg')" />
-  </div>
+	<div class="home">
+		<ReservationBox v-on:search-text="searchText" :reservations="reservations" />
+		<img :src="require('../assets/room.jpg')" />
+	</div>
 </template>
 
 <script>
@@ -25,8 +22,7 @@ export default {
   async asyncData({ app }) {
     const reservations = await app.$axios.$get(
       "https://my-json-server.typicode.com/sarmedc/reservations/reservations"
-    );
-    console.log(reservations);
+    );    
     return { reservations };
   },
 
@@ -43,15 +39,15 @@ export default {
 
 <style>
 .home {
-  text-align: right;
-  position: relative;
-  margin: 15px 86px;
+	text-align: right;
+	position: relative;
+	margin: 15px 86px;
 }
 .home img {
-  width: 80%;
-  max-width: 1300px;
-  min-width: 800px;
-  height: auto;
-  z-index: -1;
+	width: 80%;
+	max-width: 1300px;
+	min-width: 800px;
+	height: auto;
+	z-index: -1;
 }
 </style>
