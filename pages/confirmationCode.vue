@@ -1,19 +1,21 @@
 <template>
   <div v-if="reservation">
-    <h1>Your reservation in {{ reservation.city }}, {{ reservation.state }}</h1>
+    <h1 class="reservation-name">Your reservation in {{ reservation.city }}</h1>
     <div class="content">
       <img :src="reservation.cityImage" />
       <div class="reservation-info">
-        <div>Location</div>
-        <div>{{ reservation.location }}</div>
+        <div class="reservation-info-title">Location</div>
+        <div class="reservation-info-detail">{{ reservation.location }}</div>
         <br />
-        <div>Dates</div>
-        <div>
+        <div class="reservation-info-title">Dates</div>
+        <div class="reservation-info-detail">
           {{ reservation.checkInDate }} - {{ reservation.checkOutDate }}
         </div>
         <br />
-        <div>Confirmation Code</div>
-        <div>{{ reservation.confirmationCode }}</div>
+        <div class="reservation-info-title">Confirmation Code</div>
+        <div class="reservation-info-detail">
+          #{{ reservation.confirmationCode }}
+        </div>
         <br />
       </div>
     </div>
@@ -29,25 +31,15 @@ export default {
     };
   },
   async asyncData({ app, route }) {
-    const config = {
-      headers: {
-        Accept: "application/json",
-      },
-    };
     const id = route.query.id;
 
-    try {
-      if (id) {
-        const reservation = await app.$axios.$get(
-          "https://my-json-server.typicode.com/sarmedc/reservations/reservations/" +
-            id,
-          config
-        );
+    if (id) {
+      const reservation = await app.$axios.$get(
+        "https://my-json-server.typicode.com/sarmedc/reservations/reservations/" +
+          id
+      );
 
-        return { reservation };
-      }
-    } catch (err) {
-      console.error(err);
+      return { reservation };
     }
   },
 };
@@ -57,6 +49,26 @@ export default {
 .content {
   display: flex;
   flex-direction: row;
+  color: #2d2d2d;
+}
+.reservation-name {
+  color: #2d2d2d;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 32px;
+}
+.reservation-info {
+  margin-left: 25px;
+}
+.reservation-info-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.reservation-info-detail {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
 }
 img {
   width: 440px;

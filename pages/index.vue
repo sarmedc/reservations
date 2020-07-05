@@ -1,6 +1,13 @@
 <template>
-  <ReservationBox v-on:search-text="searchText" :reservations="reservations" />
-  <!-- add bg image -->
+  <div class="home">
+    <div class="box">
+      <ReservationBox
+        v-on:search-text="searchText"
+        :reservations="reservations"
+      />
+    </div>
+    <img :src="require('../assets/room.jpg')" />
+  </div>
 </template>
 
 <script>
@@ -18,22 +25,11 @@ export default {
   },
 
   async asyncData({ app }) {
-    const config = {
-      headers: {
-        Accept: "application/json",
-      },
-    };
-
-    try {
-      const reservations = await app.$axios.$get(
-        "https://my-json-server.typicode.com/sarmedc/reservations/reservationsSearch",
-        config
-      );
-
-      return { reservations };
-    } catch (err) {
-      console.error(err);
-    }
+    const reservations = await app.$axios.$get(
+      "https://my-json-server.typicode.com/sarmedc/reservations/reservations"
+    );
+    console.log(reservations);
+    return { reservations };
   },
 
   methods: {
@@ -47,4 +43,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.home {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.home .box {
+  top: 80px;
+}
+.home img {
+  right: 0;
+  width: 912px;
+  height: 560px;
+  z-index: -1;
+}
+</style>
